@@ -19,6 +19,8 @@ RUN chmod +x /opt/run.sh && \
 
 RUN sed -i '349i LimitXMLRequestBody 0\nLimitRequestBody 0' /etc/httpd/conf/httpd.conf
 
+RUN usermod -a -G root apache
+
 COPY subversion.conf /etc/httpd/conf.d/subversion.conf
 
 # web管理端口
